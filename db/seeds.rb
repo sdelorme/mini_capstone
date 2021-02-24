@@ -30,3 +30,15 @@ index << product8
 index << product9
 index << product10
 
+product1.save
+product2.save
+product3.save
+product4.save
+product5.save
+product6.save
+product7.save
+product8.save
+product9.save
+product10.save
+
+
