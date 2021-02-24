@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+index = []
+
+product1 = Product.new(name: "sunglasses", price: 20, image_url: "https://www.randomlists.com/img/things/sun_glasses.webp", description: "blue sunglasses with dark lenses")
+
