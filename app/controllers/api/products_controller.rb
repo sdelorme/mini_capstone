@@ -1,4 +1,6 @@
 class Api::ProductsController < ApplicationController
-  @index = index
-  render 'index.json.jb'
+  def index
+    @index = Product.all
+    render 'index.json.jb'
+  end
 end
