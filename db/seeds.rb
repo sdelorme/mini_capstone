@@ -38,4 +38,8 @@ product = Product.new(name: "cork", price: 1, image_url: "https://www.randomlist
 product.save
 
 
+100.times do
+  product = Product.new(name: Faker::Commerce.product_name, price: Faker::Number.number(digits: 2), image_url: Faker::Internet.url, description: Faker::Coffee.notes)
+  product.save
+end
 
