@@ -12,4 +12,15 @@ class Api::ProductsController < ApplicationController
     end
     render 'show.json.jb'
   end
+
+  def create
+    @product = Product.new(
+      name: Faker::Commerce.product_name, 
+      price: Faker::Number.number(digits: 2), 
+      image_url: Faker::Internet.url, 
+      description: Faker::Coffee.notes
+    )
+    @product.save
+    render 'show.json.jb'
+  end
 end
