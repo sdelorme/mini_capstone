@@ -5,11 +5,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def show 
-    if params[:id].to_i < Product.count
-      @product = Product.find_by(id: params[:id])  
-    else
-      @product = Product.new
-    end
+    @product = Product.find_by(id: params[:id])  
     render 'show.json.jb'
   end
 
