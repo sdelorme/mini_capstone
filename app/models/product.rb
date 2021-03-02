@@ -7,4 +7,8 @@ class Product < ApplicationRecord
     end
     return discount
   end
+
+  def tax
+    price * 0.09
+  end
 end
