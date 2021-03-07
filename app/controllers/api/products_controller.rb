@@ -6,7 +6,6 @@ class Api::ProductsController < ApplicationController
       @products = Product.order({params[:sort] => params[:sort_order]})
     else
       @products = Product.all
-    # end
       render 'index.json.jb'
     end
   end
