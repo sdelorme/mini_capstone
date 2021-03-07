@@ -1,4 +1,4 @@
-@index.map do |product|
+@products.map do |product|
   {
   id: product.id,
   name: product.name,
