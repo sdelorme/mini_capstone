@@ -1,8 +1,8 @@
 {
   id: @product.id,
   name: @product.name,
-  price: number_to_currency(@product.price),
-  image_url: @product.image_url,
+  price: @product.price,
+  images: @product.images,
   description: @product.description,
   discount: @product.is_discounted?,
   tax: number_to_currency(@product.tax),
