@@ -1,1 +1,8 @@
-{message: "well, you've made it this far"}
+{
+  id: @order.id,
+  product_id: @order.product_id,
+  quantity: @order.quantity,
+  subtotal: @order.subtotal,
+  tax: @order.tax,
+  total: @order.total
+}
