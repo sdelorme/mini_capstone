@@ -22,14 +22,19 @@ class Api::OrdersController < ApplicationController
   end
   def index
     if current_user
-      @orders = Order.where(user_id: current_user.id)
+      # @orders = Order.where(user_id: current_user.id)
+      @orders = current_user.orders
       render 'index.json.jb'
     else
       render json: {message: "Nice try, you have no orders"}
     end
   end
   def show
-    @order = Order.find_by(id: params[:id])  
-    render 'show.json.jb'
+    if current_user
+      @order = current_user.orders.find_by(id: params[:id])  
+      render 'show.json.jb'
+    else
+      render json: {error: "You do not have any orders yet"}
+    end
   end
 end
