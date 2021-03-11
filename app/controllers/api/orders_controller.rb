@@ -1,4 +1,6 @@
 class Api::OrdersController < ApplicationController
+  before_action :authenticate_user 
+
   def create
     if current_user
       @product = Product.find_by(id: params[:product_id])
@@ -31,7 +33,7 @@ class Api::OrdersController < ApplicationController
   end
   def show
     if current_user
-      @order = current_user.orders.find_by(id: params[:id])  
+      @order = current_user.orders.find_by(user_id: [current_user.id])  
       render 'show.json.jb'
     else
       render json: {error: "You do not have any orders yet"}
