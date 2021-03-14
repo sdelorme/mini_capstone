@@ -50,34 +50,40 @@
 # category = Category.new(name: "Makeup")
 # category.save
 
-new = ProductCategory.new(product_id: 5, category_id: 2)
-new.save
-new = ProductCategory.new(product_id: 6, category_id: 2)
-new.save
-new = ProductCategory.new(product_id: 7, category_id: 2)
-new.save
-new = ProductCategory.new(product_id: 8, category_id: 2)
-new.save
-new = ProductCategory.new(product_id: 9, category_id: 2)
-new.save
-new = ProductCategory.new(product_id: 10, category_id: 2)
-new.save
-new = ProductCategory.new(product_id: 12, category_id: 2)
-new.save
-new = ProductCategory.new(product_id: 13, category_id: 2)
-new.save
-new = ProductCategory.new(product_id: 14, category_id: 3)
-new.save
-new = ProductCategory.new(product_id: 15, category_id: 2)
-new.save
-new = ProductCategory.new(product_id: 16, category_id: 2)
-new.save
-new = ProductCategory.new(product_id: 18, category_id: 2)
-new.save
-new = ProductCategory.new(product_id: 19, category_id: 2)
-new.save
-new = ProductCategory.new(product_id: 20, category_id: 2)
-new.save
+# new = ProductCategory.new(product_id: 5, category_id: 2)
+# new.save
+# new = ProductCategory.new(product_id: 6, category_id: 2)
+# new.save
+# new = ProductCategory.new(product_id: 7, category_id: 2)
+# new.save
+# new = ProductCategory.new(product_id: 8, category_id: 2)
+# new.save
+# new = ProductCategory.new(product_id: 9, category_id: 2)
+# new.save
+# new = ProductCategory.new(product_id: 10, category_id: 2)
+# new.save
+# new = ProductCategory.new(product_id: 12, category_id: 2)
+# new.save
+# new = ProductCategory.new(product_id: 13, category_id: 2)
+# new.save
+# new = ProductCategory.new(product_id: 14, category_id: 3)
+# new.save
+# new = ProductCategory.new(product_id: 15, category_id: 2)
+# new.save
+# new = ProductCategory.new(product_id: 16, category_id: 2)
+# new.save
+# new = ProductCategory.new(product_id: 18, category_id: 2)
+# new.save
+# new = ProductCategory.new(product_id: 19, category_id: 2)
+# new.save
+# new = ProductCategory.new(product_id: 20, category_id: 2)
+# new.save
 
-
-
+new = CartedProduct.new(product_id: 40, user_id: 1, quantity: 1, status: "carted")
+new.save
+new = CartedProduct.new(product_id: 10, user_id: 1, quantity: 2, status: "carted")
+new.save
+new = CartedProduct.new(product_id: 21, user_id: 2, quantity: 10, status: "carted")
+new.save
+new = CartedProduct.new(product_id: 19, user_id: 2, quantity: 3, status: "removed")
+new.save
