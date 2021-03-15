@@ -4,6 +4,7 @@
     product_id: carted_product.product_id,
     quantity: carted_product.quantity,
     product: carted_product.product,
-    user_id: carted_product.user_id
+    user_id: carted_product.user_id,
+    status: carted_product.status
   }
 end
