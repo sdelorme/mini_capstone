@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   validates :price, numericality: {greater_than: 0}
   validates :description, length: {in: 10..500}
   belongs_to :supplier
-  belongs_to :carted_product
+  has_many :carted_products
   has_many :images
   has_many :orders
   has_many :product_categories
