@@ -5,6 +5,7 @@
     quantity: carted_product.quantity,
     user_id: carted_product.user_id,
     status: carted_product.status,
-    order_id: carted_product.order_id
+    order_id: carted_product.order_id,
+    product: carted_product.product
   }
 end

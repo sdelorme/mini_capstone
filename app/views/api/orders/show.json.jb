@@ -4,4 +4,11 @@
   tax: @order.tax,
   total: @order.total,
   user_id: @order.user_id,
+  carted_products: 
+      order.carted_products.map do |carted_product|
+      {
+        product: carted_product.product,
+        quantity: carted_product.quantity
+      }
+      end
 }
