@@ -2,22 +2,30 @@ class Api::OrdersController < ApplicationController
   before_action :authenticate_user 
 
   def create
-    # @product = Product.find_by(id: params[:product_id])
-    # calculated_subtotal = params[:quantity].to_i * @product.price
-    # # below is however many user puts in for quant and taking the tax of one of those products from product tax method
-    # calculated_tax = params[:quantity].to_i * @product.tax
-    # calculated_total = calculated_subtotal + calculated_tax
     @carted_products = CartedProduct.where(status: "carted", user_id: current_user.id)
-  
+    
+    @subtotal = 0
+    @carted_products.each do |carted_product|
+      @subtotal += carted_product.quantity * carted_product.product.price
+    end
+    @tax = @subtotal * 0.09
+    @total = @subtotal + @tax
+    
     @order = Order.new(
       user_id: current_user.id,
-      subtotal: @order.subtotal,
-      tax: 1000,
-      total: 1000
+      subtotal: @subtotal,
+      tax: @tax,
+      total: @total
     )
     @order.save
+
+    @carted_products.each do |carted_product|
+      carted_product.update(status: "purchased")
+      carted_product.update(order_id: @order.id)
+    end
     render 'show.json.jb'
   end
+
   def index
     # @orders = Order.where(user_id: current_user.id)
     @orders = current_user.orders

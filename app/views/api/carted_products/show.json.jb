@@ -2,6 +2,8 @@
   id: @carted_product.id,
   product_id: @carted_product.product_id,
   quantity: @carted_product.quantity,
-  product: @carted_product.product,
-  user_id: @carted_product.user_id
+  # product: @carted_product.product,
+  status: @carted_product.status,
+  user_id: @carted_product.user_id,
+  order_id: @carted_product.order_id,
 }
