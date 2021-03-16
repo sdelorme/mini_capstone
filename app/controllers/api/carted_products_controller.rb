@@ -15,9 +15,10 @@ class Api::CartedProductsController < ApplicationController
   end
 
   def destroy
-    @carted_products = current_user.carted_products.where(id: params[:id])
+    @carted_products = CartedProduct.where(user_id: current_user.id, id: params[:id])
     @carted_products.each do |carted_product|
       carted_product.update(status: "removed")
     end
+    render json: {message: "You have removed this item from your cart"}
   end
 end
